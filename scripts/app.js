@@ -1,3 +1,7 @@
+import { injectSpeedInsights } from "@vercel/speed-insights";
+
+injectSpeedInsights();
+
 const products = [
     {
         id: 1,
