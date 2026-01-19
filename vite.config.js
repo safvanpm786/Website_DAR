@@ -3,7 +3,7 @@ import { resolve } from 'path';
 
 export default defineConfig({
     // Base public path for the application
-    base: '/Website_DAR/',
+    base: './',
 
     // Build specific options
     build: {
