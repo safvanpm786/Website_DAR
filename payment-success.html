@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful | Dhahab Al Ramal</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo_transparent.png" alt="Dhahab Al Ramal" class="logo-img">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="collections.html">Collections</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                <div class="nav-icons">
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-bag text-gold"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div style="height: 100px;"></div>
+
+    <section class="section-padding">
+        <div class="container text-center" style="max-width: 700px;">
+            <div style="background: #111; padding: 3rem; border-radius: 8px; border: 1px solid rgba(212,175,55,0.3);">
+                <div style="font-size: 4rem; color: #4CAF50; margin-bottom: 1rem;">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h1 class="text-gold mb-2">Payment Successful!</h1>
+                <p style="color: #ccc; margin-bottom: 2rem;">Thank you for your purchase from Dhahab Al Ramal</p>
+
+                <div id="order-details"
+                    style="background: #1a1a1a; padding: 2rem; border-radius: 4px; margin-bottom: 2rem; text-align: left;">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+
+                <p style="color: #999; margin-bottom: 2rem;">
+                    A confirmation email has been sent to your email address with order details and tracking
+                    information.
+                </p>
+
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="collections.html" class="btn">Continue Shopping</a>
+                    <a href="index.html" class="btn" style="background: transparent; border: 1px solid #d4af37;">Back to
+                        Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="text-gold">Dhahab Al Ramal</h3>
+                    <p>Luxury perfumes inspired by the desert's golden eternal sands.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="text-white">Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="text-white">Customer Care</h4>
+                    <ul>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="payment.html">Payment Methods</a></li>
+                        <li><a href="cart.html">My Cart</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="text-white">Connect</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/dhahab_al_ramal/" target="_blank"
+                            rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 Dhahab Al Ramal. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Display order details
+        document.addEventListener('DOMContentLoaded', () => {
+            const orderData = JSON.parse(localStorage.getItem('lastOrder'));
+            const detailsContainer = document.getElementById('order-details');
+
+            if (orderData && detailsContainer) {
+                const itemsList = orderData.items.map(item =>
+                    `<li style="color: #ccc; margin-bottom: 0.3rem;">${item.name} x ${item.quantity} - RM ${(item.price * item.quantity).toFixed(2)}</li>`
+                ).join('');
+
+                detailsContainer.innerHTML = `
+                    <h3 class="text-gold mb-2">Order Details</h3>
+                    <div style="margin-bottom: 1rem;">
+                        <p style="color: #999; margin-bottom: 0.5rem;"><strong>Order ID:</strong> ${orderData.orderId}</p>
+                        <p style="color: #999; margin-bottom: 0.5rem;"><strong>Payment ID:</strong> ${orderData.paymentId}</p>
+                        <p style="color: #999; margin-bottom: 1rem;"><strong>Date:</strong> ${new Date(orderData.timestamp).toLocaleString()}</p>
+                    </div>
+                    <h4 class="text-white mb-1">Items Ordered:</h4>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 1rem;">
+                        ${itemsList}
+                    </ul>
+                    <div style="border-top: 1px solid #333; padding-top: 1rem;">
+                        <p style="color: #d4af37; font-size: 1.2rem; font-weight: 600;">Total Paid: RM ${orderData.amount.toFixed(2)}</p>
+                    </div>
+                `;
+            } else {
+                detailsContainer.innerHTML = '<p style="color: #999;">No order details available.</p>';
+            }
+        });
+    </script>
+</body>
+
+</html>

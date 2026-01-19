@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhahab Al Ramal | Luxury Perfumes</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo_transparent.png" alt="Dhahab Al Ramal" class="logo-img">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="collections.html">Collections</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                <div class="nav-icons">
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-bag text-gold"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Toggle (Hidden by default, can be implemented if needed) -->
+
+    <!-- Hero Section -->
+    <section class="hero animate">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Essence of the Golden Sands</h1>
+            <p>Discover a fragrance collection that embodies the timeless elegance and mystery of the desert.</p>
+            <a href="collections.html" class="btn">Explore Collections</a>
+        </div>
+    </section>
+
+    <!-- Featured Collection Preview -->
+    <section class="section-padding">
+        <div class="container text-center">
+            <h2 class="text-gold mb-2">Featured Creations</h2>
+            <p class="mb-4">Curated scents for the discerning soul.</p>
+            <div id="featured-products" class="product-grid">
+                <!-- Javascript will populate this, or we can hardcode a few for the home page -->
+            </div>
+            <div style="margin-top: 3rem;">
+                <a href="collections.html" class="btn">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Story Teaser -->
+    <section class="section-padding" style="background-color: var(--color-dark-grey);">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 class="text-gold mb-2">The Legacy of Scent</h2>
+                    <p>Dhahab Al Ramal moves beyond being just a perfume brand; it is an odyssey through the golden
+                        dunes of heritage and luxury. Each bottle captures a story, a memory, a whisper of the orient.
+                    </p>
+                    <br>
+                    <a href="about.html" class="btn">Read Our Story</a>
+                </div>
+                <div class="about-image">
+                    <img src="assets/images/brand_story.jpg" alt="Dhahab Al Ramal Heritage"
+                        style="width: 100%; height: auto; border: 1px solid var(--color-gold); border-radius: 8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="text-gold">Dhahab Al Ramal</h3>
+                    <p>Luxury perfumes inspired by the desert's golden eternal sands.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="text-white">Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="text-white">Customer Care</h4>
+                    <ul>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="payment.html">Payment Methods</a></li>
+                        <li><a href="cart.html">My Cart</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="text-white">Connect</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/dhahab_al_ramal/" target="_blank"
+                            rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 Dhahab Al Ramal. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal">
+        <div class="cart-header">
+            <h3 class="text-gold">Your Shopping Bag</h3>
+            <span class="close-cart">&times;</span>
+        </div>
+        <div class="cart-items">
+            <!-- Items will be injected here -->
+        </div>
+        <div class="cart-total">
+            <div class="total-row">
+                <span>Total:</span>
+                <span id="cart-total-amount">RM 0</span>
+            </div>
+            <a href="cart.html" class="btn"
+                style="width: 100%; text-align: center; display: block; margin-bottom: 1rem;">View Cart Page</a>
+            <a href="payment.html" class="btn" style="width: 100%; text-align: center; display: block;">Checkout</a>
+        </div>
+    </div>
+
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>
