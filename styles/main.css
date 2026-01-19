@@ -66,6 +66,16 @@ nav {
     display: block;
 }
 
+.logo-text {
+    font-family: var(--font-secondary);
+    color: var(--color-gold);
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
 .nav-links a {
     color: var(--color-white);
     text-decoration: none;

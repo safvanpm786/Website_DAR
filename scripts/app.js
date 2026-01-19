@@ -151,12 +151,22 @@ function addToCart(id) {
 }
 
 function removeFromCart(id) {
-    cart = cart.filter(item => item.id !== id);
-    saveCart();
-    updateCartUI();
-    // Also update cart page if we are on it
-    if (document.querySelector('.cart-page-items')) {
-        renderCartPage();
+    const itemIndex = cart.findIndex(item => item.id === id);
+
+    if (itemIndex > -1) {
+        if (cart[itemIndex].quantity > 1) {
+            cart[itemIndex].quantity -= 1;
+        } else {
+            cart.splice(itemIndex, 1);
+        }
+
+        saveCart();
+        updateCartUI();
+
+        // Also update cart page if we are on it
+        if (document.querySelector('.cart-page-items')) {
+            renderCartPage();
+        }
     }
 }
 
